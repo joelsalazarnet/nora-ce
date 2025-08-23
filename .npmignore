@@ -1,0 +1,17 @@
+
+# Development files
+.git/
+.gitignore
+.npmignore
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Lock files (users should generate their own)
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
