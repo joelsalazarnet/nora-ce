@@ -1,55 +1,71 @@
-# MCP Server for Odoo
+# Nora Community Edition (Nora-CE)
 
-A minimal read-only Model Context Protocol (MCP) server for Odoo ERP integration written in TypeScript. Enables AI assistants to safely query and explore Odoo data.
+An Open Source Model Context Protocol (MCP) Server that lets AI assistants query and explore Odoo ERP data safely. 
 
-## Available Tools
+## Available tools
 
-- **search_records** - Search Odoo records with domain filters
-- **get_record** - Get records by ID  
-- **list_models** - List available models
-- **get_model_fields** - Get model field definitions
+- `search_records` — Search records inside a Model that satisfy the given Domain.
+- `count_records` — Count records inside a Model that satisfy the given Domain.
+- `get_record` — Get records inside a Model that satisfy the given IDs.
+- `list_models` — List available Odoo Models.
+- `list_fields` — Get the fields definition for an Odoo Model.
 
-## Common Models
-
-- `res.partner` - Customers/contacts
-- `sale.order` - Sales orders  
-- `product.product` - Products
-- `account.move` - Invoices
-- `stock.quant` - Inventory
-
-## Installation
+## MCP Client Config
 
 ### Prerequisites
-- **Node.js**: Version 20.0.0 or higher
-- **npm**: For package management
 
-### Development
+- Node.js >= 20.0.0
+- NPM >= 9.0.0
 
-```bash
-# Clone the repository
-git clone https://github.com/joelsalazarnet/nora-ce
-cd nora-ce
+### Install & Run
 
-# Install dependencies
-npm install
-
-# Build the project
-npm run build
-```
-
-## Claude Desktop Setup
-
-Add to your claude_desktop_config.json file:
+If you want to install and run this MCP server with an MCP Client, add an entry like:
 
 ```json
 {
   "mcpServers": {
-    "odoo": {
+    "Nora": {
       "command": "npx",
-      "args": ["odoo-mcp-ro"],
+      "args": ["nora-ce"],
       "env": {
-        "ODOO_URL": "https://your-instance.odoo.com",
-        "ODOO_DB": "your-database",
+        "ODOO_URL": "https://your-odoo-url.com",
+        "ODOO_DB": "your-database-name",
+        "ODOO_USERNAME": "your-email@example.com",
+        "ODOO_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+## MCP Server Config for Development
+
+### Prerequisites
+
+- Node.js >= 20.0.0
+- NPM >= 9.0.0
+
+### Install & Build
+
+Clone, install and build:
+
+```bash
+git clone https://github.com/joelsalazarnet/nora-ce
+cd nora-ce
+npm install
+npm run build
+```
+If you want to connect to the development MCP server with an MCP Client, add an entry like:
+
+```json
+{
+  "mcpServers": {
+    "Nora": {
+      "command": "node",
+      "args": ["path\\to\\nora-ce\\dist\\index.js"],
+      "env": {
+        "ODOO_URL": "https://your-odoo-url.com",
+        "ODOO_DB": "your-database-name",
         "ODOO_USERNAME": "your-email@example.com",
         "ODOO_API_KEY": "your-api-key"
       }
@@ -60,21 +76,4 @@ Add to your claude_desktop_config.json file:
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
-
-### GNU General Public License v3.0
-
-Copyright (c) 2025 ODOO-MCP-RO
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
+This repository is licensed under GPL-3.0 as declared in `package.json`.
