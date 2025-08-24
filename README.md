@@ -22,20 +22,20 @@ An Open Source Model Context Protocol (MCP) Server that lets AI assistants query
 If you want to install and run this MCP server with an MCP Client, add an entry like:
 
 ```json
-{
-  "mcpServers": {
-    "Nora": {
-      "command": "npx",
-      "args": ["nora-ce"],
-      "env": {
-        "ODOO_URL": "https://your-odoo-url.com",
-        "ODOO_DB": "your-database-name",
-        "ODOO_USERNAME": "your-email@example.com",
-        "ODOO_API_KEY": "your-api-key"
+  {
+    "mcpServers": {
+      "Nora": {
+        "command": "npx",
+        "args": ["-y", "@joelsalazarnet/nora-ce"],
+        "env": {
+          "ODOO_URL": "https://your-odoo-url.com",
+          "ODOO_DB": "your-database-name",
+          "ODOO_USERNAME": "your-email@example.com",
+          "ODOO_API_KEY": "your-api-key"
+        }
       }
     }
   }
-}
 ```
 
 ## MCP Server Config for Development
