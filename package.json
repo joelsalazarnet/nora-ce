@@ -1,5 +1,5 @@
 {
-  "name": "nora-ce",
+  "name": "@joelsalazarnet/nora-ce",
   "version": "0.1.0",
   "description": "Open Source MCP server for Odoo ERP",
   "main": "dist/index.js",
@@ -19,6 +19,9 @@
   ],
   "author": "Joel Salazar",
   "license": "GPL-3.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
