@@ -4,7 +4,7 @@
   "description": "Open Source MCP server for Odoo ERP",
   "main": "dist/index.js",
   "bin": {
-  "nora-ce": "./dist/index.js"
+    "nora-ce": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
