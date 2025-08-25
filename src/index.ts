@@ -59,7 +59,7 @@ const MCP_TOOLS = {
 const fmtErr = (e: unknown) => (e instanceof Error ? e.message : String(e));
 
 async function createMcpServer(): Promise<Server> {
-  const server = new Server({ name: 'nora-ce', version: '0.1.0' }, { capabilities: { tools: MCP_TOOLS } });
+  const server = new Server({ name: 'nora-ce', version: '0.1.2' }, { capabilities: { tools: MCP_TOOLS } });
   server.setRequestHandler(ListToolsRequestSchema, async () => MCP_TOOLS);
 
   async function handleTool(name: string, args: any, odoo: OdooClient): Promise<CallToolResult> {
