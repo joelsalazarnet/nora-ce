@@ -55,7 +55,7 @@ cd nora-ce
 npm install
 npm run build
 ```
-If you want to connect to the development MCP server with an MCP Client, add an entry like:
+If you want to connect an MCP Client to the development server, add an entry like:
 
 ```json
 {
@@ -76,4 +76,4 @@ If you want to connect to the development MCP server with an MCP Client, add an 
 
 ## License
 
-This repository is licensed under GPL-3.0 as declared in `package.json`.
+This repository is licensed under GPL-3.0.
